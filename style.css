@@ -111,6 +111,7 @@ h1 {
     text-align: left;
     overflow: auto;
     color: var(--font-color) !important;
+    text-align: center !important;
 }
 
 .audio-box {
