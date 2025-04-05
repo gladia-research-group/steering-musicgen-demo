@@ -138,9 +138,14 @@ h1 {
     audio {
         margin-bottom: 40px !important;
     }
-}
-
-@media (max-width: 1080px) {
+    .tab-container {
+        flex-wrap: wrap;
+    }
+    .tab-container li {
+        width: 45%;
+        text-align: center;
+        box-sizing: border-box;
+    }
     .sample-row {
         flex-direction: column;
     }
