@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Music MechInt</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"/>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css"/>
+  
+  <!-- Simple JavaScript for Tab Switching -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const tabButtons = document.querySelectorAll(".tab-link");
+      const allTabContents = document.querySelectorAll(".tab-content");
+
+      tabButtons.forEach(button => {
+        button.addEventListener("click", () => {
+          tabButtons.forEach(btn => btn.classList.remove("current"));
+          allTabContents.forEach(tab => tab.classList.remove("current"));
+
+          button.classList.add("current");
+          const tabId = button.getAttribute("data-tab");
+          document.getElementById(tabId).classList.add("current");
+        });
+      });
+    });
+  </script>
+  
+</head>
+
+<body>
+  <div class="gradio-container">
+    <!-- Header -->
+    <h1>Music MechInt</h1>
+    <div class="centered-text">
+      Listen to audio samples from <i>Activation Patching for Interpretable Steering in Music Generation</i>.<br>
+      All sample are straight from the model, with no post-processing.<br>
+      Steered versions are activation-patched with a sterring coefficient of <i>1</i>.<br>
+      Read the <a href="https://arxiv.org/abs/yourpaperid" target="_blank">arXiv</a>.
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="tabs-container">
+      <ul class="tab-container">
+        <li class="tab-link current" data-tab="slower-tab">Slower</li>
+        <li class="tab-link" data-tab="faster-tab">Faster</li>
+        <li class="tab-link" data-tab="brighter-tab">Brighter</li>
+        <li class="tab-link" data-tab="darker-tab">Darker</li>
+      </ul>
+
+      <!-- Slower Tab Content (2 samples) -->
+      <div id="slower-tab" class="tab-content current">
+        <div class="audio-section">
+          <!-- Sample 1 -->
+          <div class="sample-title">Sample 1</div>
+          <div class="sample-row">
+            <div class="description-box">
+              A vibrant African percussion ensemble with intricate djembe patterns, rhythmic call-and-response vocals, and a festive spirit, celebrating cultural heritage.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/slower/sample1/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/slower/sample1/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+          <!-- Sample 2 -->
+          <div class="sample-title">Sample 2</div>
+          <div class="sample-row">
+            <div class="description-box">
+              An upbeat bebop jazz piece with rapid saxophone runs, energetic drum brushes, and lively piano improvisations, capturing a classic vibe.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/slower/sample2/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/slower/sample2/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Faster Tab Content (2 samples) -->
+      <div id="faster-tab" class="tab-content">
+        <div class="audio-section">
+          <!-- Sample 1 -->
+          <div class="sample-title">Sample 1</div>
+          <div class="sample-row">
+            <div class="description-box">
+              A vibrant African percussion ensemble with intricate djembe patterns, rhythmic call-and-response vocals, and a festive spirit, celebrating cultural heritage.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/faster/sample1/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/faster/sample1/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+          <!-- Sample 2 -->
+          <div class="sample-title">Sample 2</div>
+          <div class="sample-row">
+            <div class="description-box">
+              An upbeat bebop jazz piece with rapid saxophone runs, energetic drum brushes, and lively piano improvisations, capturing a classic vibe.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/faster/sample2/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/faster/sample2/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Brighter Tab Content (3 samples) -->
+      <div id="brighter-tab" class="tab-content">
+        <div class="audio-section">
+          <!-- Sample 1 -->
+          <div class="sample-title">Sample 1</div>
+          <div class="sample-row">
+            <div class="description-box">
+              A deep house inspired track with warm analog synths, smooth basslines, and a steady groove, offering a relaxed yet energetic vibe.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/brighter/sample1/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/brighter/sample1/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+          <!-- Sample 2 -->
+          <div class="sample-title">Sample 2</div>
+          <div class="sample-row">
+            <div class="description-box">
+              An alternative rock piece with dynamic shifts, echoing guitar effects, and introspective lyrics, creating an immersive soundscape.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/brighter/sample2/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/brighter/sample2/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+          <!-- Sample 3 -->
+          <div class="sample-title">Sample 3</div>
+          <div class="sample-row">
+            <div class="description-box">
+              A gritty hard rock track with distorted guitars, aggressive bass, and raw vocals, embodying the spirit of rebellion.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/brighter/sample3/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/brighter/sample3/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+          <div class="sample-title">Sample 4</div>
+          <div class="sample-row">
+            <div class="description-box">
+              A pulsating techno track with driving bass, layered synth textures, and a relentless electronic beat, ideal for a futuristic dance floor.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/brighter/sample4/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/brighter/sample4/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Darker Tab Content (3 samples) -->
+      <div id="darker-tab" class="tab-content">
+        <div class="audio-section">
+          <!-- Sample 1 -->
+          <div class="sample-title">Sample 1</div>
+          <div class="sample-row">
+            <div class="description-box">
+              A deep house inspired track with warm analog synths, smooth basslines, and a steady groove, offering a relaxed yet energetic vibe.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/darker/sample1/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/darker/sample1/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+          <!-- Sample 2 -->
+          <div class="sample-title">Sample 2</div>
+          <div class="sample-row">
+            <div class="description-box">
+              An alternative rock piece with dynamic shifts, echoing guitar effects, and introspective lyrics, creating an immersive soundscape.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/darker/sample2/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/darker/sample2/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+          <!-- Sample 3 -->
+          <div class="sample-title">Sample 3</div>
+          <div class="sample-row">
+            <div class="description-box">
+              A gritty hard rock track with distorted guitars, aggressive bass, and raw vocals, embodying the spirit of rebellion.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/darker/sample3/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/darker/sample3/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+          <div class="sample-title">Sample 4</div>
+          <div class="sample-row">
+            <div class="description-box">
+                A pulsating techno track with driving bass, layered synth textures, and a relentless electronic beat, ideal for a futuristic dance floor.
+            </div>
+            <div class="audio-box">
+              <label>Reference</label>
+              <audio controls>
+                <source src="audio/darker/sample4/reference.wav" type="audio/wav"/>
+              </audio>
+            </div>
+            <div class="audio-box">
+              <label>Steered</label>
+              <audio controls>
+                <source src="audio/darker/sample4/steered.wav" type="audio/wav"/>
+              </audio>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
