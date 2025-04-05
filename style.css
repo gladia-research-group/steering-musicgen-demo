@@ -132,3 +132,16 @@ h1 {
 .tab-link {
     width: 200px;
 }
+
+@media (max-width: 1080px) {
+    .sample-row {
+        flex-direction: column;
+    }
+
+    .tabs-container {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        color: inherit;
+    }
+}
